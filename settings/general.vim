@@ -108,7 +108,7 @@ cmap w!! w !sudo tee %
 " Color settings
 colorscheme gruvbox
 set background=dark
-hi ColorColumn guibg=#353535 ctermbg=246
+hi ColorColumn guibg=#353535 ctermbg=236
 
 
 " Disables automatic commenting on newline:
