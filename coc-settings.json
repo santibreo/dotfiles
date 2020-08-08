@@ -13,7 +13,7 @@
     // diagnosis
     "diagnostic.refreshAfterSave": true,
     "diagnostic.errorSign": "⛔",
-    "diagnostic.warningSign": "👁",
+    "diagnostic.warningSign": "❗",
     "diagnostic.infoSign": "❔",
     "diagnostic.hintSign": "〰",
     // suggestions
@@ -27,18 +27,18 @@
     // python config
     "python.jediEnabled": false,
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.local/lib/python3.7/site-packages/black.py",
+    "python.formatting.blackPath": "~/.local/lib/python3.7/site-packages",
     "python.formatting.blackArgs": [
         "-l 79"
     ],
-    "python.linting.enabled": true,
-    "python.linting.pylintEnabled": true,
-    "python.linting.pylintPath": "~/.local/lib/python3.7/site-packages/pylint/epylint.py",
+    "python.linting.enabled": false,
+    "python.linting.flake8Enabled": true,
+    "python.linting.flake8Path": "/home/santi/.local/lib/python3.7/site-packages",
     "python.venvFolders": [
         ".virtualenvs",
-        "../venv",
-        ".pyenv"
+        ".pipenvs"
     ],
+    "python.venvPath": "~/.virtualenvs",
     // Code Snippets
     "snippets.ultisnips.enable": true,
     "snippets.userSnippetsDirectory": "~/.vim/ultisnips"

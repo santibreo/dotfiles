@@ -29,28 +29,28 @@ let g:coc_snippet_prev = '<c-k>'
 nmap <leader>es :CocCommand snippets.editSnippets<cr>
 
 
-"------------------------------------------------------------------------------
-
-" ULTISNIPS
-"==========
-let g:UltiSnipsListSnippets = '<c-tab>'
-let g:UltiSnipsExpandTrigger = '<c-space>'
-let g:UltiSnipsJumpForwardTrigger = '<c-j>'
-let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-
-
-" Vertically split ultisnips edit window
-let g:UltiSnipsEditSplit="vertical"
-
-
-" Snippets directory
-"let g:UltiSnipsSnippetsDir="~/AppData/Local/nvim\ultisnips"
-let g:UltiSnipsSnippetDirectories = [
-            \expand('$NVIMHOME\ultisnips'),
-            \'UltiSnips',
-            \'ultisnips'
-            \]
-
-" Open UltiSnips edit function
-"nmap <leader>ue :UltiSnipsEdit<cr>
-
+""------------------------------------------------------------------------------
+"
+"" ULTISNIPS
+""==========
+"let g:UltiSnipsListSnippets = '<c-tab>'
+"let g:UltiSnipsExpandTrigger = '<c-space>'
+"let g:UltiSnipsJumpForwardTrigger = '<c-j>'
+"let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
+"
+"
+"" Vertically split ultisnips edit window
+"let g:UltiSnipsEditSplit="vertical"
+"
+"
+"" Snippets directory
+""let g:UltiSnipsSnippetsDir="~/AppData/Local/nvim\ultisnips"
+"let g:UltiSnipsSnippetDirectories = [
+"            \expand('$NVIMHOME\ultisnips'),
+"            \'UltiSnips',
+"            \'ultisnips'
+"            \]
+"
+"" Open UltiSnips edit function
+""nmap <leader>ue :UltiSnipsEdit<cr>
+"
