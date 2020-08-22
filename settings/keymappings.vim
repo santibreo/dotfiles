@@ -21,9 +21,6 @@ nnoremap <leader>vf <C-W>vgf
 " Spell-check set to <leader>o, 'o' for 'orthography':
 imap <leader>o <ESC>:setlocal spell! spelllang=en<CR>
 
-" map S to replace current word with pasteboard
-nnoremap S diw"0P
-
 " Y to behave as D and P
 noremap Y y$
 
@@ -59,17 +56,6 @@ nnoremap ~~ ~lh
 nnoremap <C-S-right> :bnext<CR>
 " Ctrl+SHIFT+🡸  will go back
 nnoremap <C-S-left> :bprevious<CR>
-
-" Use control-c instead of escape
-inoremap <C-c> <Esc>
-
-" Better tabbing
-vnoremap < <gv
-vnoremap > >gv
-
-" Consoles
-nnoremap <C-p> :sp<CR>:term ipython<CR>
-nnoremap <C-ñ> :sp<CR>:term R<CR>
 
 " Can get out of terminal mode
 tnoremap <Esc> <C-\><C-n>

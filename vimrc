@@ -41,11 +41,10 @@ let g:python3_host_prog = expand("/usr/bin/python3.7")
 let g:node_host_prog = expand("/usr/bin/node")
 
 
-" configurations
+" Configurations
 " netree
 let g:netrw_liststyle=3 " tree view type
 let g:netrw_banner=1 " 0 to don't show a useless banner
-
 
 " emmet
 let g:user_emmet_leader_key=',' " same as user
