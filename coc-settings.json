@@ -15,7 +15,7 @@
     "diagnostic.errorSign": "⛔",
     "diagnostic.warningSign": "❗",
     "diagnostic.infoSign": "❔",
-    "diagnostic.hintSign": "〰",
+    "diagnostic.hintSign": ">>",
     // suggestions
     "suggest.minTriggerInputLength": 2,
     "suggest.snippetIndicator": "[+]",

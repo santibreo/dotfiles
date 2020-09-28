@@ -24,7 +24,7 @@ set scrolloff=4                     " Keep four lines between the cursor and the
 "set showbreak=►..                   " Begin wrapped line with this
 "set lbr                             " wrap words
 set backspace=indent,eol,start      " Allow backspacing over autoindent, line breaks and start of insert action
-set clipboard=unnamed,unnamedplus   " Access to the system clipboard
+set clipboard=unnamedplus           " Access to the system clipboard
 set iskeyword+=-                    " treat dash separated words as a word text object
 set relativenumber number           " Properly line numbering
 set pumheight=20                    " Makes popup menu smaller

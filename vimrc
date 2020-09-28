@@ -21,9 +21,9 @@ call plug#begin('~/.vim/plugged')
 " For Latex
     Plug 'lervag/vimtex'
 " For Rmarkdown
-    Plug 'vim-pandoc/vim-pandoc'
-    Plug 'vim-pandoc/vim-pandoc-syntax'
-    Plug 'vim-pandoc/vim-rmarkdown'
+    "Plug 'vim-pandoc/vim-pandoc'
+    "Plug 'vim-pandoc/vim-pandoc-syntax'
+    "Plug 'vim-pandoc/vim-rmarkdown'
 " Fuzzy file search
 "    Plug 'vifm/vifm.vim'
 " Rip grep for faster searchs
@@ -44,10 +44,10 @@ let g:node_host_prog = expand("/usr/bin/node")
 " Configurations
 " netree
 let g:netrw_liststyle=3 " tree view type
-let g:netrw_banner=1 " 0 to don't show a useless banner
+let g:netrw_banner=1 " 0 to not show a useless banner
 
 " emmet
-let g:user_emmet_leader_key=',' " same as user
+let g:user_emmet_leader_key=';' " same as user
 
 " Coc
 source ~/.vim/settings/coc.vim

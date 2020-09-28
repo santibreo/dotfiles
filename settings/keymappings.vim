@@ -4,6 +4,7 @@ nmap <CR> o<ESC>k
 
 " Goyo
 map <C-g> :Goyo<CR>
+imap <C-g> <ESC>:Goyo<CR>i
 
 " Faster splits movement
 nnoremap <C-J> <C-W><C-J>
@@ -27,10 +28,6 @@ noremap Y y$
 " Open NETRW with Q
 noremap Q :Sexplore<CR>
 
-" Move selected lines
-"xnoremap J :move '>+1<CR>gv-gv 
-"xnoremap K :move '<-2<CR>gv-gv
-
 " Use <S-Left> to resize windows
 nnoremap <S-Down> :resize -2<CR>
 nnoremap <S-Up> :resize +2<CR>
@@ -52,10 +49,10 @@ nnoremap <c-s-down> viwu
 " Easy TOGGLE
 nnoremap ~~ ~lh
 
-" Ctrl+SHIFT+🡺  in general mode will move to text buffer
-nnoremap <C-S-right> :bnext<CR>
-" Ctrl+SHIFT+🡸  will go back
-nnoremap <C-S-left> :bprevious<CR>
+" Ctrl+n in general mode will move to text buffer
+nnoremap <C-s-right> :bnext<CR>
+" Ctrl+s will go back
+nnoremap <C-s-left> :bprevious<CR>
 
 " Can get out of terminal mode
 tnoremap <Esc> <C-\><C-n>
