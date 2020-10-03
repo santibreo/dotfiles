@@ -41,18 +41,16 @@ inoremap kj <Esc>
 inoremap kk <Esc>
 
 " Easy CAPS
-inoremap <C-s-up> <ESC>viwUi
-nnoremap <C-s-up> viwU
+nnoremap <leader><up> viwU
 " Easy LOWER
-inoremap <c-s-down> <ESC>viwui
-nnoremap <c-s-down> viwu
+nnoremap <leader><down> viwu
 " Easy TOGGLE
 nnoremap ~~ ~lh
 
 " Ctrl+n in general mode will move to text buffer
-nnoremap <C-s-right> :bnext<CR>
+nnoremap <C-n> :bnext<CR>
 " Ctrl+s will go back
-nnoremap <C-s-left> :bprevious<CR>
+nnoremap <C-p> :bprevious<CR>
 
 " Can get out of terminal mode
 tnoremap <Esc> <C-\><C-n>

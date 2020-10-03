@@ -23,7 +23,6 @@
     "suggest.detailField": "preview",
     "suggest.labelMaxLength": 50,
     "suggest.enablePreview": true,
-    "list.maxHeight": 15,
     // python config
     "python.jediEnabled": false,
     "python.formatting.provider": "black",
