@@ -24,6 +24,18 @@
 #
 # Online reference:
 # 	https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+global !p
+def complete(t, opts):
+	if t:
+		opts = [ m[len(t):] for m in opts if m.startswith(t) ]
+	if len(opts) == 1:
+		return opts[0]
+	return "(" + ' | '.join(opts) + ')'
+endglobal
+
+snippet '^mmm.*' "Dumb snippet" r
+ mmm$1`!p snip.rv = complete(t[1], ["hola", "hoadios"])`
+endsnippet
 
 snippet pdnp "import pandas and numpy" b
 import pandas as pd

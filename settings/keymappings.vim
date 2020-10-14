@@ -1,6 +1,7 @@
 " Key Remapping
 " Empty lines
 nmap <CR> o<ESC>k
+nmap <leader><CR> O<ESC>j
 
 " Goyo
 map <C-g> :Goyo<CR>
@@ -16,14 +17,17 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>hf <C-W>f
 nnoremap <leader>vf <C-W>vgf
 
-" Folding with 
-"nnoremap <space> za 
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
-imap <leader>o <ESC>:setlocal spell! spelllang=en<CR>
+nnoremap <leader>yesp <ESC>:setlocal spell! spelllang=en<CR>
+nnoremap <leader>nosp :setlocal nospell<CR>
 
 " Y to behave as D and P
 noremap Y y$
+noremap vv V
+noremap V v$
+" Visual paste do not burn what I am copying
+vnoremap p "_dP
 
 " Open NETRW with Q
 noremap Q :Sexplore<CR>
@@ -35,15 +39,9 @@ nnoremap <S-Left> :vertical resize -2<CR>
 nnoremap <S-Right> :vertical resize +2<CR>
 
 " I hate escape more than anything else
-inoremap jk <Esc>
 inoremap jj <Esc>
-inoremap kj <Esc>
 inoremap kk <Esc>
 
-" Easy CAPS
-nnoremap <leader><up> viwU
-" Easy LOWER
-nnoremap <leader><down> viwu
 " Easy TOGGLE
 nnoremap ~~ ~lh
 

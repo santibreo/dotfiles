@@ -17,9 +17,9 @@
 " Use <C-space> for trigger snippet expand.
 imap <c-space> <Plug>(coc-snippets-expand)
 " Use <C-j> for both jump
-imap <c-j> <Plug>(coc-snippets-jump)
+"imap <c-j> <Plug>(coc-snippets-jump)
 " Use <C-j> for select text for visual placeholder of snippet.
-vmap <c-j> <Plug>(coc-snippets-select)
+"vmap <c-j> <Plug>(coc-snippets-select)
 " Use <C-j> for jump to next placeholder, it's default of coc.nvim
 let g:coc_snippet_next = '<c-j>'
 " Use <C-k> for jump to previous placeholder, it's default of coc.nvim
@@ -30,27 +30,21 @@ nmap <leader>es :CocCommand snippets.editSnippets<cr>
 
 
 ""------------------------------------------------------------------------------
-"
-"" ULTISNIPS
-""==========
-"let g:UltiSnipsListSnippets = '<c-tab>'
-"let g:UltiSnipsExpandTrigger = '<c-space>'
+
+" ULTISNIPS
+"==========
+"let g:UltiSnipsListSnippets = '<c-n>'
+"let g:UltiSnipsExpandTrigger = '<c-e>'
 "let g:UltiSnipsJumpForwardTrigger = '<c-j>'
 "let g:UltiSnipsJumpBackwardTrigger = '<c-k>'
-"
-"
+
+
 "" Vertically split ultisnips edit window
 "let g:UltiSnipsEditSplit="vertical"
-"
-"
+
+
 "" Snippets directory
-""let g:UltiSnipsSnippetsDir="~/AppData/Local/nvim\ultisnips"
-"let g:UltiSnipsSnippetDirectories = [
-"            \expand('$NVIMHOME\ultisnips'),
-"            \'UltiSnips',
-"            \'ultisnips'
-"            \]
+"let g:UltiSnipsSnippetDirectories = ['ultisnips']
 "
 "" Open UltiSnips edit function
-""nmap <leader>ue :UltiSnipsEdit<cr>
-"
+"nmap <leader>es :UltiSnipsEdit<cr>

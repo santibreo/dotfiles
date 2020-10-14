@@ -4,7 +4,6 @@ let mapleader = ","
 
 " + BASICS --------------------------------------------------------------------
 set nocompatible                    " Avoid VI backward compatibility
-set spellfile=$HOME/.vim/dictionary/en.utf-8.add  " English words list
 set encoding=utf-8
 set fileencoding=utf-8              " The encoding written to file
 set autoread                        " Read files when outsides modifications are detected
@@ -20,6 +19,7 @@ set confirm                         " Ask when leaving unsaved files
 set lazyredraw                      " Not redraw if is not needed
 " + BEHAVIOUR -----------------------------------------------------------------
 set scrolloff=4                     " Keep four lines between the cursor and the edge of the screen
+set nowrap
 "set breakindent                     " Preserve horizontal whitespace when wrapping
 "set showbreak=►..                   " Begin wrapped line with this
 "set lbr                             " wrap words
@@ -33,7 +33,7 @@ set splitbelow                      " Split below instead of above
 set splitright                      " Vsplit right instead of left
 set foldmethod=indent               " Enable folding based on indentation
 set foldlevel=99                    " Enable maximun folding levels
-set undodir=$HOME/.vim/undodir      " Where to save the undo files
+set undodir=$VIMHOME/undodir        " Where to save the undo files (need to be created)
 set undofile                        " Enable undo after file is closed
 " + DEACTIVATIONS -------------------------------------------------------------
 set noerrorbells                    " Errors should not lead to a color orchestra
@@ -129,10 +129,6 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 "            \'.mdown': 'markdown'
 "            \}
 autocmd BufRead, BufNewFile *.tex set filetype=tex
-autocmd BufEnter *.tex set foldmethod=expr
-autocmd BufEnter *.tex set foldexpr=vimtex#fold#level(v:lnum)
-autocmd BufEnter *.tex set foldtext=vimtex#fold#text()
-
 
 "Change cursor depending on mode
 "Cursor settings:

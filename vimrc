@@ -1,5 +1,22 @@
+" Netree
+let g:netrw_liststyle=3 " tree view type
+let g:netrw_banner=1 " 0 to not show a useless banner
+
+" Emmet
+let g:user_emmet_leader_key=';'
+let g:loaded_python_provider = 0
+
+" Python and Node hosts
+let g:python3_host_prog = system('python -e "import os;print(os.sys.executable)"')
+
+if has('win32')
+    let g:node_host_prog = expand("$USERPROFILE\\AppData\\Roaming\\npm\\node_modules\\neovim\\bin\\cli.js")
+else
+    let g:node_host_prog = expand("/usr/bin/node")
+endif
+
 " Plugins
-call plug#begin('~/.vim/plugged')
+call plug#begin('$VIMHOME/plugged')
 " Better vim
     Plug 'tpope/vim-repeat'
     Plug 'tpope/vim-surround'
@@ -13,7 +30,7 @@ call plug#begin('~/.vim/plugged')
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Snippets
     Plug 'honza/vim-snippets'
-    " Plug 'SirVer/ultisnips'
+    "Plug 'SirVer/ultisnips'
 " For Python
     " Plug 'tell-k/vim-autopep8'
 " For HTML
@@ -32,29 +49,15 @@ call plug#end()
 
 
 "General settings
-source ~/.vim/settings/general.vim
-source ~/.vim/settings/keymappings.vim
- 
-" Python and Node hosts
-let g:loaded_python_provider = 0
-let g:python3_host_prog = expand("/usr/bin/python3.7")
-let g:node_host_prog = expand("/usr/bin/node")
-
-
-" Configurations
-" netree
-let g:netrw_liststyle=3 " tree view type
-let g:netrw_banner=1 " 0 to not show a useless banner
-
-" emmet
-let g:user_emmet_leader_key=';' " same as user
+source $VIMHOME/settings/general.vim
+source $VIMHOME/settings/keymappings.vim
 
 " Coc
-source ~/.vim/settings/coc.vim
-source ~/.vim/settings/coc-vimtex.vim
+source $VIMHOME/settings/coc.vim
+source $VIMHOME/settings/coc-vimtex.vim
 
 " Snippets
-source ~/.vim/settings/snippets.vim
+source $VIMHOME/settings/snippets.vim
 
 " Fugitive
-source ~/.vim/settings/fugitive.vim
+source $VIMHOME/settings/fugitive.vim
