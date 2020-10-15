@@ -1,0 +1,86 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+snippet \bar "Short overline" wA
+\\bar{$1}$0
+endsnippet
+
+snippet // "Fraction" wA
+\\frac\{${1:num}\}\{${2:dem}\}$0
+endsnippet
+
+snippet ilm "Inline math" wA
+\$$1\$$0
+endsnippet
+
+snippet olm "Math block" bA
+
+\$\$
+$1
+\$\$
+
+$0
+endsnippet
+
+snippet ilc "Inline code" wA
+\`$1\` $0
+endsnippet
+
+snippet olc "Code block" bA
+
+\`\`\`\{${1:r}\}
+$2
+\`\`\`
+
+$0
+endsnippet
+
+snippet alertnote "Insert and info alert" bA
+
+\`\`\`\{r, eval=TRUE, echo=FALSE\}
+message("$1")
+\`\`\`
+
+$0
+endsnippet
+
+snippet alertwarn "Insert and warning alert" bA
+
+\`\`\`\{r, eval=TRUE, echo=FALSE\}
+warning("$1")
+\`\`\`
+
+$0
+endsnippet
+
+snippet alerterror "Insert and error alert" bA
+
+\`\`\`\{r, eval=TRUE, echo=FALSE\}
+stop("$1")
+\`\`\`
+
+$0
+endsnippet
