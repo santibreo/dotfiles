@@ -2,6 +2,11 @@
 let g:netrw_liststyle=3 " tree view type
 let g:netrw_banner=1 " 0 to not show a useless banner
 
+" GUI (clean it)
+set guioptions-=m  "Hide menu bar
+set guioptions-=T  "Hide toolbar
+set guioptions-=r  "Hide scrollbar
+
 " Emmet
 let g:user_emmet_leader_key=';'
 let g:loaded_python_provider = 0
