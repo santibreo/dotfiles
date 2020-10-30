@@ -7,6 +7,7 @@ autocmd GUIENTER * :set guifont=UbuntuMono\ 13
 set guioptions-=m  "Hide menu bar
 set guioptions-=T  "Hide toolbar
 set guioptions-=r  "Hide scrollbar
+set guioptions-=e  "Hide tabline (uses vim's, according to colorscheme)
 
 " Emmet
 let g:user_emmet_leader_key=';'
@@ -51,6 +52,8 @@ call plug#begin('$VIMHOME/plugged')
 "    Plug 'vifm/vifm.vim'
 " Rip grep for faster searchs
     Plug 'jremmen/vim-ripgrep'
+" Repl like gods
+    Plug 'sillybun/vim-repl'
 call plug#end()
 
 
@@ -67,3 +70,6 @@ source $VIMHOME/settings/snippets.vim
 
 " Fugitive
 source $VIMHOME/settings/fugitive.vim
+
+" REPL
+source $VIMHOME/settings/repl.vim

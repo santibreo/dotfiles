@@ -103,7 +103,7 @@ set statusline=%!ModeStatusline()
 au! InsertEnter, InsertLeave, CmdlineEnter, CmdlineLeave * redraws
 
 " Auto source when writing to init.vim 
-au! BufWritePost $MYVIMRC source %  
+au! BufWritePost $VIMRC source %  
 
 
 " You can't stop me

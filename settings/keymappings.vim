@@ -51,10 +51,11 @@ nnoremap <C-n> :bnext<CR>
 nnoremap <C-p> :bprevious<CR>
 
 " Can get out of terminal mode
-tnoremap <Esc> <C-\><C-n>
-tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-tmap <C-j> <Esc><C-j>
-tmap <C-k> <Esc><C-k>
-tmap <C-h> <Esc><C-h>
-tmap <C-l> <Esc><C-l>
+noremap <leader>repl :REPLToggle<CR>
+tnoremap <leader><Esc> <C-\><C-n>
+"tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+tmap <C-j> <C-w>j
+tmap <C-k> <C-w>k
+tmap <C-h> <C-w>h
+tmap <C-l> <C-w>l
 
