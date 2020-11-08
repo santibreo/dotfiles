@@ -32,7 +32,7 @@
     ],
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "/home/santi/.local/lib/python3.7/site-packages",
+    "python.linting.flake8Path": "~/.local/lib/python3.7/site-packages",
     "python.venvFolders": [
         ".virtualenvs",
         ".pipenvs"
