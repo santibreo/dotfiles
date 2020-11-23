@@ -20,6 +20,17 @@ function! RmdRender()
     silent execute ":redraw!"
 endfunction
 
+
+function! RmdRunServer()
+    " Save and render current buffer to html file
+    write
+    silent !clear
+    let cmdOpts = " -e \"library('blogdown'); blogdown::serve_site();\""
+    echom "Running Server"
+    silent execute "!" . g:r_command . cmdOpts
+    silent execute ":redraw!"
+endfunction
+
 function! HtmlOpen()
     " Open html file related to current buffer
     silent !clear
@@ -34,6 +45,7 @@ function! HtmlOpen()
 endfunction
 
 nnoremap <buffer> <leader>ren :call RmdRender()<cr>
+nnoremap <buffer> <leader>run :call RmdRunServer()<cr>
 nnoremap <buffer> <leader>ope :call HtmlOpen()<cr>
 nnoremap <buffer> <leader>ren! :call RmdRender()<cr>:call HtmlOpen()<cr>
 
