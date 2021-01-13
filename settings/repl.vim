@@ -8,4 +8,4 @@ let g:repl_program = {
 	\	'default': 'bash'
 	\	}
 
-
+let g:repl_position = 3
