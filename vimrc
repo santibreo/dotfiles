@@ -9,10 +9,6 @@ set guioptions-=T  "Hide toolbar
 set guioptions-=r  "Hide scrollbar
 set guioptions-=e  "Hide tabline (uses vim's, according to colorscheme)
 
-" Emmet
-let g:user_emmet_leader_key=';'
-let g:loaded_python_provider = 0
-
 " Python and Node hosts
 let g:python3_host_prog = system('python -e "import os;print(os.sys.executable)"')
 
@@ -44,6 +40,9 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'mattn/emmet-vim'
 " For Latex
     Plug 'lervag/vimtex'
+" For Markdown
+    Plug 'tpope/vim-markdown'
+    Plug 'masukomi/vim-markdown-folding'
 " For Rmarkdown
     "Plug 'vim-pandoc/vim-pandoc'
     "Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -60,6 +59,15 @@ call plug#end()
 "General settings
 source $VIMHOME/settings/general.vim
 source $VIMHOME/settings/keymappings.vim
+
+" Emmet
+let g:user_emmet_install_global = 0
+autocmd FileType html,css EmmetInstall
+let g:user_emmet_leader_key=',' " Avoid conflicts with user
+
+" vim-markdown
+let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'r']
+let g:loaded_python_provider = 0
 
 " Coc
 source $VIMHOME/settings/coc.vim

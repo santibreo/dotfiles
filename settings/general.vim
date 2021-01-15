@@ -1,6 +1,6 @@
 " Settings
 " set leader key
-let mapleader = ","
+let mapleader = " "
 
 " + BASICS --------------------------------------------------------------------
 set nocompatible                    " Avoid VI backward compatibility
