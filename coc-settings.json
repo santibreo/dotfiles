@@ -23,7 +23,6 @@
     "suggest.labelMaxLength": 50,
     "suggest.enablePreview": true,
     // python config
-    "python.jediEnabled": false,
     "python.formatting.provider": "black",
     "python.formatting.blackPath": "~/.local/lib/python3.7/site-packages",
     "python.formatting.blackArgs": [
@@ -32,10 +31,6 @@
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
     "python.linting.flake8Path": "~/.local/lib/python3.7/site-packages",
-    "python.venvFolders": [
-        ".virtualenvs",
-        ".pipenvs"
-    ],
     "python.venvPath": "~/.virtualenvs",
     // Code Snippets
     "snippets.ultisnips.enable": true,

@@ -1,6 +1,6 @@
 " Settings
 " set leader key
-let mapleader = " "
+let mapleader = ","
 
 " + BASICS --------------------------------------------------------------------
 set nocompatible                    " Avoid VI backward compatibility
@@ -8,7 +8,7 @@ set encoding=utf-8
 set fileencoding=utf-8              " The encoding written to file
 set autoread                        " Read files when outsides modifications are detected
 set autowriteall                    " Write all files if they are modified from outside
-syntax on                           " Enable syntax highlighting 
+syntax on                           " Enable syntax highlighting
 filetype plugin indent on           " Enable filetype Plugin & Indent
 set hidden                          " Enable re-usable window (needed for Coc)
 set showtabline=2                   " Always show tabs
@@ -102,8 +102,8 @@ endfunction
 set statusline=%!ModeStatusline()
 au! InsertEnter, InsertLeave, CmdlineEnter, CmdlineLeave * redraws
 
-" Auto source when writing to init.vim 
-au! BufWritePost $VIMRC source %  
+" Auto source when writing to init.vim
+au! BufWritePost $VIMRC source %
 
 
 " You can't stop me
@@ -133,7 +133,7 @@ autocmd BufRead, BufNewFile *.tex set filetype=tex
 "Change cursor depending on mode
 "Cursor settings:
 "  1 -> blinking block
-"  2 -> solid block 
+"  2 -> solid block
 "  3 -> blinking underscore
 "  4 -> solid underscore
 "  5 -> blinking vertical bar

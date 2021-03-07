@@ -1,22 +1,15 @@
 " Key Remapping
 " Empty lines
 nmap <CR> o<ESC>k
-nmap <leader><CR> O<ESC>j
+nmap <leader><CR> Ojkj
 
 " Goyo
 map <C-g> :Goyo<CR>
 imap <C-g> <ESC>:Goyo<CR>i
 
-" Faster splits movement
-nnoremap <C-J> <C-W><C-J>
-nnoremap <C-K> <C-W><C-K>
-nnoremap <C-L> <C-W><C-L>
-nnoremap <C-H> <C-W><C-H>
-
 " Open files in a split
 nnoremap <leader>hf <C-W>f
 nnoremap <leader>vf <C-W>vgf
-
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 nnoremap <leader>yesp <ESC>:setlocal spell! spelllang=en<CR>
@@ -38,24 +31,19 @@ nnoremap <S-Up> :resize +2<CR>
 nnoremap <S-Left> :vertical resize -2<CR>
 nnoremap <S-Right> :vertical resize +2<CR>
 
-" I hate escape more than anything else
-inoremap jj <Esc>
-inoremap kk <Esc>
+" I hate escape me than anything else
+inoremap jk <Esc>
+inoremap kj <Esc>
 
 " Easy TOGGLE
 nnoremap ~~ ~lh
 
 " Ctrl+n in general mode will move to text buffer
-nnoremap <C-n> :bnext<CR>
+nnoremap <C-n> :tabn<CR>
 " Ctrl+s will go back
-nnoremap <C-p> :bprevious<CR>
+nnoremap <C-p> :tabp<CR>
 
 " Can get out of terminal mode
 noremap <leader>repl :REPLToggle<CR>
 tnoremap <leader><Esc> <C-\><C-n>
 "tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
-tmap <C-j> <C-w>j
-tmap <C-k> <C-w>k
-tmap <C-h> <C-w>h
-tmap <C-l> <C-w>l
-
