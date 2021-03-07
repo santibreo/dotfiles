@@ -11,9 +11,9 @@
     ],
     // diagnosis
     "diagnostic.refreshAfterSave": true,
-    "diagnostic.errorSign": "⛔",
-    "diagnostic.warningSign": "❗",
-    "diagnostic.infoSign": "❔",
+    "diagnostic.errorSign": "XX",
+    "diagnostic.warningSign": "!!",
+    "diagnostic.infoSign": "--",
     "diagnostic.hintSign": ">>",
     // suggestions
     "suggest.minTriggerInputLength": 2,

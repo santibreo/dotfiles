@@ -26,10 +26,10 @@ vnoremap p "_dP
 noremap Q :Sexplore<CR>
 
 " Use <S-Left> to resize windows
-nnoremap <S-Down> :resize -2<CR>
-nnoremap <S-Up> :resize +2<CR>
-nnoremap <S-Left> :vertical resize -2<CR>
-nnoremap <S-Right> :vertical resize +2<CR>
+nnoremap <S-j> :resize -2<CR>
+nnoremap <S-k> :resize +2<CR>
+nnoremap <S-l> :vertical resize -2<CR>
+nnoremap <S-h> :vertical resize +2<CR>
 
 " I hate escape me than anything else
 inoremap jk <Esc>
