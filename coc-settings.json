@@ -10,7 +10,6 @@
         "json"
     ],
     // diagnosis
-    "diagnostic.refreshAfterSave": true,
     "diagnostic.errorSign": "XX",
     "diagnostic.warningSign": "!!",
     "diagnostic.infoSign": "--",
@@ -24,13 +23,13 @@
     "suggest.enablePreview": true,
     // python config
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.local/lib/python3.7/site-packages",
+    "python.formatting.blackPath": "~/.local/lib/python3.9/site-packages",
     "python.formatting.blackArgs": [
         "-l 79"
     ],
     "python.linting.enabled": false,
     "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "~/.local/lib/python3.7/site-packages",
+    "python.linting.flake8Path": "~/.local/lib/python3.9/site-packages",
     "python.venvPath": "~/.virtualenvs",
     // Code Snippets
     "snippets.ultisnips.enable": true,
