@@ -28,6 +28,12 @@ vnoremap P "_dP
 " Open NETRW with Q
 noremap Q :Sexplore<CR>
 
+" Easier splits navigation
+nnoremap <C-h> <C-W><C-h>
+nnoremap <C-j> <C-W><C-j>
+nnoremap <C-k> <C-W><C-k>
+nnoremap <C-l> <C-W><C-l>
+
 " Use <S-Left> to resize windows
 nnoremap <S-j> :resize -2<CR>
 nnoremap <S-k> :resize +2<CR>
@@ -48,5 +54,10 @@ nnoremap <C-p> :tabp<CR>
 
 " Can get out of terminal mode
 noremap <leader>repl :REPLToggle<CR>
-tnoremap <leader><Esc> <C-\><C-n>
-"tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+" Can get out of terminal mode
+tnoremap <Esc> <C-\><C-n>
+tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'
+tmap <C-j> <Esc><C-j>
+tmap <C-k> <Esc><C-k>
+tmap <C-h> <Esc><C-h>
+tmap <C-l> <Esc><C-l>
