@@ -8,6 +8,8 @@ map <C-g> :Goyo<CR>
 imap <C-g> <ESC>:Goyo<CR>i
 
 " Open files in a split
+nnoremap gf         <C-W>gf
+nnoremap <leader>t  :tabnew<space>
 nnoremap <leader>hf <C-W>f
 nnoremap <leader>vf <C-W>vgf
 
@@ -16,11 +18,12 @@ nnoremap <leader>yesp <ESC>:setlocal spell! spelllang=en<CR>
 nnoremap <leader>nosp :setlocal nospell<CR>
 
 " Y to behave as D and P
-noremap Y y$
+noremap Y yg_
 noremap vv V
-noremap V v$
+noremap V vg_
 " Visual paste do not burn what I am copying
-vnoremap p "_dP
+vnoremap p "_dp
+vnoremap P "_dP
 
 " Open NETRW with Q
 noremap Q :Sexplore<CR>
