@@ -25,6 +25,7 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'tpope/vim-surround'
     Plug 'junegunn/goyo.vim'
     Plug 'sheerun/vim-polyglot'
+    Plug 'chrisbra/unicode.vim'
 " Git
     Plug 'tpope/vim-fugitive'
 " Colors
@@ -35,10 +36,8 @@ call plug#begin('$VIMHOME/plugged')
 " Snippets
     Plug 'honza/vim-snippets'
     "Plug 'SirVer/ultisnips'
-" For Python
-    " Plug 'tell-k/vim-autopep8'
 " For HTML
-    Plug 'mattn/emmet-vim'
+    Plug 'mattn/emmet-vim', {'for': ['html', 'css', 'djangohtml']}
 " For Latex
     Plug 'lervag/vimtex'
 " For Markdown
@@ -66,7 +65,6 @@ let g:netrw_liststyle=3 " tree view type
 let g:netrw_banner=1 " 0 to not show a useless banner
 " Emmet
 let g:user_emmet_install_global = 0
-autocmd FileType html, css EmmetInstall
 let g:user_emmet_leader_key='¡' " Avoid conflicts with user
 " vim-markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'r']

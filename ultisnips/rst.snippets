@@ -24,63 +24,42 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet \bar "Short overline" wA
-\\bar{$1}$0
+snippet img "Outline image" bA
+.. image:: $1
+   :width: ${2:100%}
+   :alt: $3
+
 endsnippet
 
-snippet // "Fraction" wA
-\\frac\{${1:num}\}\{${2:dem}\}$0
+
+snippet icb "Inline code" w
+\`$1\` $0
 endsnippet
 
-snippet imb "Inline math block" wA
-\$$1\$$0
+snippet ocb "Outline code block" bA
+
+.. code-block:: ${1:python}
+
+   \\begin\{aligned\}
+   $2
+   \\end\{aligned\}
+
+$0
+endsnippet
+
+snippet imb "Inline math" w
+:math:\`$1\` $0
 endsnippet
 
 snippet omb "Outline math block" bA
 
-\$\$
-$1
-\$\$
+.. math::
+
+   \\begin\{aligned\}
+   $1
+   \\end\{aligned\}
 
 $0
 endsnippet
 
-snippet icb "Inline code block" wA
-\`$1\` $0
-endsnippet
 
-snippet ocb "Outline Code block" bA
-
-\`\`\`\{${1:r}\}
-$2
-\`\`\`
-
-$0
-endsnippet
-
-snippet alertnote "Insert and info alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-message("$1")
-\`\`\`
-
-$0
-endsnippet
-
-snippet alertwarn "Insert and warning alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-warning("$1")
-\`\`\`
-
-$0
-endsnippet
-
-snippet alerterror "Insert and error alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-stop("$1")
-\`\`\`
-
-$0
-endsnippet
