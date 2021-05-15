@@ -48,7 +48,7 @@ call plug#begin('$VIMHOME/plugged')
     "Plug 'vim-pandoc/vim-pandoc-syntax'
     "Plug 'vim-pandoc/vim-rmarkdown'
 " Fuzzy file search
-"    Plug 'vifm/vifm.vim'
+"    Plug 'vifm/vifm.vim
 " Rip grep for faster searchs
     Plug 'jremmen/vim-ripgrep'
 " Repl like gods
