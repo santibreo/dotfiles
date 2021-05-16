@@ -1,15 +1,15 @@
 " Key Remapping
 " Empty lines
 nmap <CR> o<ESC>k
-nmap <leader><CR> Ojkj
+nmap <leader><CR> Oj<ESC>
 
 " Goyo
 map <C-g> :Goyo<CR>
 imap <C-g> <ESC>:Goyo<CR>i
 
 " Open files in a split
-nnoremap gf         <C-W>gf
 nnoremap <leader>t  :tabnew<space>
+nnoremap <leader>tf <C-W>gf
 nnoremap <leader>hf <C-W>f
 nnoremap <leader>vf <C-W>vgf
 
@@ -26,13 +26,7 @@ vnoremap p "_dp
 vnoremap P "_dP
 
 " Open NETRW with Q
-noremap Q :Sexplore<CR>
-
-" Easier splits navigation
-nnoremap <C-h> <C-W><C-h>
-nnoremap <C-j> <C-W><C-j>
-nnoremap <C-k> <C-W><C-k>
-nnoremap <C-l> <C-W><C-l>
+nnoremap Q :Sexplore<CR>
 
 " Use <S-Left> to resize windows
 nnoremap <S-j> :resize -2<CR>
@@ -47,13 +41,15 @@ inoremap kj <Esc>
 " Easy TOGGLE
 nnoremap ~~ ~lh
 
-" Ctrl+n in general mode will move to text buffer
-nnoremap <C-n> :tabn<CR>
-" Ctrl+s will go back
-nnoremap <C-p> :tabp<CR>
+" ,+n in general mode will move to text buffer
+nnoremap <leader>n     :bn<CR>
+" ,+p will go back
+nnoremap <leader>p     :bp<CR>
+" ,+d will close
+nnoremap <leader>d     :bd<CR>
 
-" Can get out of terminal mode
-noremap <leader>repl :REPLToggle<CR>
+" Allow get out of terminal mode
+nnoremap <leader>repl :REPLToggle<CR>
 " Can get out of terminal mode
 tnoremap <Esc> <C-\><C-n>
 tnoremap <expr> <leader><C-R> '<C-\><C-N>"'.nr2char(getchar()).'pi'

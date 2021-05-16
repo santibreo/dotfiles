@@ -121,14 +121,15 @@ autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
 
 
 " Ensure files are read as what I want:
-"let g:vimwiki_ext2syntax = {
-"            \'.Rmd': 'markdown',
-"            \'.rmd': 'markdown',
-"            \'.md': 'markdown',
-"            \'.markdown': 'markdown',
-"            \'.mdown': 'markdown'
-"            \}
+let g:vimwiki_ext2syntax = {
+            \'.Rmd': 'rmarkdown',
+            \'.rmd': 'rmarkdown',
+            \'.md': 'markdown',
+            \'.markdown': 'markdown',
+            \'.mdown': 'markdown'
+            \}
 autocmd BufRead, BufNewFile *.tex set filetype=tex
+autocmd BufRead, BufNewFile *.cls set filetype=tex
 
 "Change cursor depending on mode
 "Cursor settings:

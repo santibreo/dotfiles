@@ -1,8 +1,3 @@
-" SETUP
-" Netree
-let g:netrw_liststyle=3 " tree view type
-let g:netrw_banner=1 " 0 to not show a useless banner
-
 " GUI (clean it)
 autocmd GUIENTER * :set guifont=Monospace\ 11
 set guioptions-=m  "Hide menu bar
@@ -26,6 +21,7 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'junegunn/goyo.vim'
     Plug 'sheerun/vim-polyglot'
     Plug 'chrisbra/unicode.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 " Git
     Plug 'tpope/vim-fugitive'
 " Colors
@@ -42,7 +38,7 @@ call plug#begin('$VIMHOME/plugged')
     Plug 'lervag/vimtex'
 " For Markdown
     Plug 'tpope/vim-markdown'
-    Plug 'masukomi/vim-markdown-folding'
+    Plug 'masukomi/vim-markdown-folding', {'for': ['markdown', 'rmarkdown']}
 " For Rmarkdown
     "Plug 'vim-pandoc/vim-pandoc'
     "Plug 'vim-pandoc/vim-pandoc-syntax'
@@ -69,6 +65,8 @@ let g:user_emmet_leader_key='¡' " Avoid conflicts with user
 " vim-markdown
 let g:markdown_fenced_languages = ['html', 'python', 'bash=sh', 'r']
 let g:loaded_python_provider = 0
+" FZF
+noremap <C-P> :FZF<CR>
 " Coc
 source $VIMHOME/settings/coc.vim
 source $VIMHOME/settings/coc-vimtex.vim
