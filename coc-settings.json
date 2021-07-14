@@ -38,5 +38,5 @@
     "snippets.ultisnips.directories": [
         "ultisnips"
     ],
-    "snippets.userSnippetsDirectory": "$NVIMHOME/ultisnips"
+    "snippets.userSnippetsDirectory": "$VIMHOME/ultisnips"
 }

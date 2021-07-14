@@ -15,7 +15,13 @@ else
         \	}
 endif
 
-nmap <leader><leader>r ;ReplToggle<CR>
-nmap <leader><leader>c ;ReplClose<CR>
-nmap <leader>w <Plug>ReplSendLine
-vmap <leader>w <Plug>ReplSendVisual
+if has('nvim')
+    nmap <leader>rr ;ReplToggle<CR>
+    nmap <leader>rrc ;ReplClose<CR>
+    nmap <leader>rrw <Plug>ReplSendLine
+    vmap <leader>rrw <Plug>ReplSendVisual
+else
+    nmap <leader>rr ;REPLToggle<CR>
+    nmap <leader>rrc ;REPLClose<CR>
+    g:sendtorepl_invoke_key = "<leader>w"
+endif
