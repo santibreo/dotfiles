@@ -1,6 +1,6 @@
 if !has("nvim")
     " GUI (clean it)
-    autocmd GUIENTER * :set guifont=Monospace\ 11
+    autocmd GUIENTER * :set guifont=Monospace\ 12
     set guioptions-=m  "Hide menu bar
     set guioptions-=T  "Hide toolbar
     set guioptions-=r  "Hide scrollbar
@@ -43,9 +43,9 @@ call plug#begin("$VIMHOME/plugged")
     Plug 'junegunn/fzf.vim'
     " Rip grep for faster searchs
     Plug 'jremmen/vim-ripgrep'
-    " REPL
+    " REPL (neovim)
     "Plug 'pappasam/nvim-repl'
-    " Not compatible with neovim
+    " REPL (vim)
     Plug 'sillybun/vim-repl'
 call plug#end()
 
