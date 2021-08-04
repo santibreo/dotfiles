@@ -18,7 +18,7 @@ function! SetMainTexFile()
         silent! lcd ..
         let b:vimtex_main="00-master.tex"
     else
-        let b:vimtex_main=substitute(bufname("%"), "\\", "/", "g")
+        let b:vimtex_main=substitute(bufname("%"), '\\', '/', 'g')
     endif
 endfunction
 
