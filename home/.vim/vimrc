@@ -1,0 +1,8 @@
+" GUI (clean it)
+autocmd GUIENTER * :set guifont=Monospace\ 11
+set guioptions-=m  "Hide menu bar
+set guioptions-=T  "Hide toolbar
+set guioptions-=r  "Hide scrollbar
+set guioptions-=e  "Hide tabline (uses vim's, according to colorscheme)
+
+source $NVIMHOME/init.vim

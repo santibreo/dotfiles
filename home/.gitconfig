@@ -1,0 +1,7 @@
+[user]
+	email = santibreo@gmail.com
+	name = Prophet Jeremy
+[init]
+	defaultBranch = main
+[pull]
+	rebase = false

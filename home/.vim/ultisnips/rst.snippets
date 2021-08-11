@@ -31,18 +31,19 @@ snippet img "Outline image" bA
 
 endsnippet
 
+snippet lnk "Link" bA
+\`${1:text} <${2:url}>\`_$0
+endsnippet
 
 snippet icb "Inline code" w
-\`$1\` $0
+\`\`$1\`\` $0
 endsnippet
 
 snippet ocb "Outline code block" bA
 
 .. code-block:: ${1:python}
 
-   \\begin\{aligned\}
    $2
-   \\end\{aligned\}
 
 $0
 endsnippet

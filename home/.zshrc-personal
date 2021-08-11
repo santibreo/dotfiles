@@ -1,0 +1,98 @@
+#
+# ~/.zshrc
+#
+
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
+
+# Cool prompt
+#PS1='[\[\033[01;32m\]\u\[\033[01;31m\]@\[\033[01;34m\]\h\[\033[00m\]] \[\033[01;31m\]\W\n\[\033[01;31m\]\$ \[\033[00m\]'
+#PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;196m\]\h\[$(tput sgr0)\]\[$(tput bold)\]@\[$(tput sgr0)\]\[\033[38;5;12m\]\u\[$(tput sgr0)\]\[$(tput bold)\]]\[$(tput sgr0)\] \[$(tput sgr0)\]\[\033[38;5;7m\]\W\[$(tput sgr0)\]\n\\$ \[$(tput sgr0)\]"
+#PS1='%(?.%F{green}√.%F{red}?%?)%f %B%F{240}%1~%f%b %# '
+
+# This has no effect
+ZSH_THEME="tjkirch"
+
+# Select mode
+bindkey -v
+
+# Global variables
+export EDITOR='nvim'
+export TERM='alacritty'
+export VIMHOME="$HOME/.vim"
+export NVIMHOME="$HOME/.config/nvim"
+export PYTHONPATH="$HOME/.config/my_scripts"
+
+# Alias
+alias dmenu_run="dmenu_run -fn 'Inconsolata 9'"
+alias sdn='shutdown now'
+#alias sdn='sudo poweroff'       # (Artix) Shutdown now without problems
+alias vv='nvim'
+alias gv='nvim-qt'
+alias cls='clear'               # Too many Windows hours
+alias pubssh='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard'
+alias pydeactivate="source $HOME/.zshrc-personal && deactivate"
+
+# Fehing
+function fehing() {
+    feh -g 1000x750 -d -. --edit --auto-rotate -S filename $1
+}
+
+# Python virtualenvs
+function pyactivate() {
+    source $HOME/.virtualenvs/$1/bin/activate
+}
+
+function pycreate() {
+    python -m venv ~/.virtualenvs/$1
+    pyactivate $1
+}
+
+function pydelete() {
+    deactivate
+    rm -rf ~/.virtualenvs/$1
+}
+
+alias pyenvs="ls -1 ~/.virtualenvs"
+alias pyreqs="pip freeze > requirements.txt"
+
+# create a zkbd compatible hash;
+# to add other keys to this hash, see: man 5 terminfo
+typeset -g -A key
+
+key[Home]="${terminfo[khome]}"
+key[End]="${terminfo[kend]}"
+key[Insert]="${terminfo[kich1]}"
+key[Backspace]="${terminfo[kbs]}"
+key[Delete]="${terminfo[kdch1]}"
+key[Up]="${terminfo[kcuu1]}"
+key[Down]="${terminfo[kcud1]}"
+key[Left]="${terminfo[kcub1]}"
+key[Right]="${terminfo[kcuf1]}"
+key[PageUp]="${terminfo[kpp]}"
+key[PageDown]="${terminfo[knp]}"
+key[Shift-Tab]="${terminfo[kcbt]}"
+
+# setup key accordingly
+[[ -n "${key[Home]}"      ]] && bindkey -- "${key[Home]}"       beginning-of-line
+[[ -n "${key[End]}"       ]] && bindkey -- "${key[End]}"        end-of-line
+[[ -n "${key[Insert]}"    ]] && bindkey -- "${key[Insert]}"     overwrite-mode
+[[ -n "${key[Backspace]}" ]] && bindkey -- "${key[Backspace]}"  backward-delete-char
+[[ -n "${key[Delete]}"    ]] && bindkey -- "${key[Delete]}"     delete-char
+[[ -n "${key[Up]}"        ]] && bindkey -- "${key[Up]}"         up-line-or-history
+[[ -n "${key[Down]}"      ]] && bindkey -- "${key[Down]}"       down-line-or-history
+[[ -n "${key[Left]}"      ]] && bindkey -- "${key[Left]}"       backward-char
+[[ -n "${key[Right]}"     ]] && bindkey -- "${key[Right]}"      forward-char
+[[ -n "${key[PageUp]}"    ]] && bindkey -- "${key[PageUp]}"     beginning-of-buffer-or-history
+[[ -n "${key[PageDown]}"  ]] && bindkey -- "${key[PageDown]}"   end-of-buffer-or-history
+[[ -n "${key[Shift-Tab]}" ]] && bindkey -- "${key[Shift-Tab]}"  reverse-menu-complete
+
+# Finally, make sure the terminal is in application mode, when zle is
+# active. Only then are the values from $terminfo valid.
+if (( ${+terminfo[smkx]} && ${+terminfo[rmkx]} )); then
+	autoload -Uz add-zle-hook-widget
+	function zle_application_mode_start { echoti smkx }
+	function zle_application_mode_stop { echoti rmkx }
+	add-zle-hook-widget -Uz zle-line-init zle_application_mode_start
+	add-zle-hook-widget -Uz zle-line-finish zle_application_mode_stop
+fi
