@@ -90,7 +90,7 @@ function! ModeStatusline()
     let statusstring.="\ [%n]"
     return statusstring
 endfunction
-
+set laststatus=2                    " Always show statusbar
 set statusline=%!ModeStatusline()
 au! InsertEnter, InsertLeave, CmdlineEnter, CmdlineLeave * redraws
 
