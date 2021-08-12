@@ -1,3 +1,7 @@
+# TODOs
+
+- Complete README
+
 
 ## Keyboard settings
 
@@ -18,4 +22,6 @@ To use `AltGr` (Right Alt) as `<Compose Key>`:
 ```
 setxkbmap -option compose:ralt
 ```
+
+## Vim/NeoVim configuration
 

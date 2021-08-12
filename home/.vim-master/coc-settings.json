@@ -1,0 +1,42 @@
+{
+    // globals
+    "coc.preferences.formatOnSaveFiletypes": [
+        "css",
+        "markdown",
+        "javascript",
+        "graphql",
+        "html",
+        "yaml",
+        "json"
+    ],
+    // diagnosis
+    "diagnostic.errorSign": "🚫",
+    "diagnostic.warningSign": "🚩",
+    "diagnostic.infoSign": "‼️",
+    "diagnostic.hintSign": "🛸",
+    // suggestions
+    "suggest.minTriggerInputLength": 2,
+    "suggest.snippetIndicator": "[+]",
+    "suggest.removeDuplicateItems": true,
+    "suggest.detailField": "preview",
+    "suggest.labelMaxLength": 50,
+    "suggest.enablePreview": true,
+    "suggest.maxCompleteItemCount": 15,
+    // python config
+    "python.formatting.provider": "black",
+    "python.formatting.blackArgs": [
+        "-l 80"
+    ],
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=F0401"
+    ],
+    // Code Snippets
+    "snippets.ultisnips.usePythonx": true,
+    "snippets.ultisnips.enable": true,
+    "snippets.ultisnips.directories": [
+        "ultisnips"
+    ],
+    "snippets.userSnippetsDirectory": "$VIMHOME/ultisnips"
+}

@@ -1,0 +1,173 @@
+# A valid snippet should starts with:
+#
+#		snippet trigger_word [ "description" [ options ] ]
+#
+# and end with:
+#
+#		endsnippet
+#
+# Snippet options:
+#
+#		b - Beginning of line.
+#		i - In-word expansion.
+#		w - Word boundary.
+#		r - Regular expression
+#		e - Custom context snippet
+#		A - Snippet will be triggered automatically, when condition matches.
+#
+# Basic example:
+#
+#		snippet emitter "emitter properties" b
+#		private readonly ${1} = new Emitter<$2>()
+#		public readonly ${1/^_(.*)/$1/}: Event<$2> = this.$1.event
+#		endsnippet
+#
+# Online reference:
+# 	https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
+# Chunks ----------------------------------------------------------------------
+snippet 1l "Magic byte line" bA
+%!TeX program = ${1:xelatex}
+
+$0
+endsnippet
+
+snippet article "Begin article" b
+\\documentclass{article}
+
+% AMS packages:
+\\usepackage[${1:english}]{babel}
+\\usepackage{geometry}
+\\usepackage{amsmath, amsthm, amsfonts}
+\\geometry{
+	a4paper,
+	total={160mm,247mm},
+	left=25mm,
+	top=20mm,
+	bottom=30mm
+}
+$0
+endsnippet
+
+snippet santicle "Santander Document" bA
+\\documentclass{ModelRiskReport}
+endsnippet
+
+snippet almsty "ALM latex template" bA
+\usepackage[version=${1}]{${2:ALMTemplate}}
+$0
+endsnippet
+
+# References ------------------------------------------------------------------
+snippet annex "Reference to Annex" w
+Annex~\\ref\{annex:$1\}$0
+endsnippet
+
+snippet equation "Reference to equation" w
+Equation~\\eqref\{eq:$1\}$0
+endsnippet
+
+# Environments and blocks -----------------------------------------------------
+snippet document "Document (or arbitrary) environment" b
+\\begin{${1:document}}
+
+${0:${VISUAL}}
+
+\\end{$1}
+endsnippet
+
+# Math related
+snippet omb "Outline Math Block" bA
+
+\\begin\{align\}
+	$1 \label\{eq:$2\}
+\\end\{align\}
+
+$0
+endsnippet
+
+snippet bconds "Equation conditions" bA
+\\begin\{conditions\}
+	$1 & $2 & $3\\\\
+	$4 & $5 & $6
+\\end\{conditions\}
+
+$0
+endsnippet
+
+snippet mbcases "Begin cases" w
+\\begin\{cases\}
+$1\\\\
+$2
+\\end\{cases\}$0
+endsnippet
+
+snippet sympy "Sympy block " w
+sympyin $1 sympyout$0
+endsnippet
+
+# Sympy solve
+snippet "sympyin(.+)sympyout" "Evaluate sympy" wr
+`!p
+from sympy import *
+if match:
+	x, y, z, t = symbols('x y z t')
+	k, m, n = symbols('k m n', integer=True)
+	f, g, h = symbols('f g h', cls=Function)
+	sol = latex(eval(match.group(1).strip()))
+	snip.rv = sol.replace("{\\left(", "\\left(")\
+				 .replace("\\right)}", "\\right)")\
+				 .replace("\\,", "")
+else:
+	snip.rv = ""
+`$0
+endsnippet
+
+# Inline editions -------------------------------------------------------------
+snippet " "Text quotation" wA
+\`\`$1''$0
+endsnippet
+
+snippet ttt "Teletyped text" wA
+\\texttt\{$1\}$0
+endsnippet
+
+snippet rrrt "Red text" wA
+\\textcolor{SantanderRed}{$1}$0
+endsnippet
+
+snippet imb "Inline math block" w
+\\($1\\)$0
+endsnippet
+
+snippet mqq "qquad" wA
+\\qquad
+endsnippet
+
+snippet mtxt "Math text" wA
+\\text\{$1\}$0
+endsnippet
+
+snippet gls "Acronymns" w
+\\gls{$1}$0
+endsnippet
+
+snippet glspl "Acronymns plural" w
+\\glspl{$1}$0
+endsnippet
+
+snippet scomm "Add comment made by me" iA
+\\Santi{$1}$0
+endsnippet
+
+snippet -- "List item" bA
+\\item $0
+endsnippet
+
+snippet o-- "List item open" bA
+\\item[\$\\square\$] $0
+endsnippet
+
+snippet c-- "List item closed" bA
+\\item[\$\\boxtimes\$] $0
+endsnippet
