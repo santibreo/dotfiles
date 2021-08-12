@@ -10,10 +10,10 @@
         "json"
     ],
     // diagnosis
-    "diagnostic.errorSign": "XX",
-    "diagnostic.warningSign": "!!",
-    "diagnostic.infoSign": "--",
-    "diagnostic.hintSign": ">>",
+    "diagnostic.errorSign": "🚫",
+    "diagnostic.warningSign": "🚩",
+    "diagnostic.infoSign": "‼️",
+    "diagnostic.hintSign": "🛸",
     // suggestions
     "suggest.minTriggerInputLength": 2,
     "suggest.snippetIndicator": "[+]",
@@ -21,17 +21,22 @@
     "suggest.detailField": "preview",
     "suggest.labelMaxLength": 50,
     "suggest.enablePreview": true,
+    "suggest.maxCompleteItemCount": 15,
     // python config
     "python.formatting.provider": "black",
-    "python.formatting.blackPath": "~/.local/lib/python3.9/site-packages",
     "python.formatting.blackArgs": [
-        "-l 79"
+        "-l 80"
     ],
-    "python.linting.enabled": false,
-    "python.linting.flake8Enabled": true,
-    "python.linting.flake8Path": "~/.local/lib/python3.9/site-packages",
-    "python.venvPath": "~/.virtualenvs",
+    "python.linting.enabled": true,
+    "python.linting.pylintEnabled": true,
+    "python.linting.pylintArgs": [
+        "--disable=F0401"
+    ],
     // Code Snippets
+    "snippets.ultisnips.usePythonx": true,
     "snippets.ultisnips.enable": true,
-    "snippets.userSnippetsDirectory": "~/.vim/ultisnips"
+    "snippets.ultisnips.directories": [
+        "ultisnips"
+    ],
+    "snippets.userSnippetsDirectory": "$VIMHOME/ultisnips"
 }

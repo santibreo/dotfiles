@@ -1,3 +1,17 @@
+" TextEdit might fail if hidden is not set.
+" set hidden
+
+" Some servers have issues with backup files, see #649.
+" set nobackup
+" set nowritebackup
+
+" Give more space for displaying messages.
+" set cmdheight=2
+
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+" set updatetime=300
+
 " Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
@@ -10,6 +24,10 @@ else
   set signcolumn=yes
 endif
 
+function! s:check_back_space() abort
+  let col = col('.') - 1
+  return !col || getline('.')[col - 1]  =~# '\s'
+endfunction
 " Use <c-space> to trigger completion.
 inoremap <silent><expr> <c-space> coc#refresh()
 
@@ -33,7 +51,7 @@ nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.
-nnoremap <silent> SD :call <SID>show_documentation()<CR>
+nnoremap <silent> K :call <SID>show_documentation()<CR>
 
 function! s:show_documentation()
   if (index(['vim','help'], &filetype) >= 0)
@@ -91,10 +109,28 @@ omap ac <Plug>(coc-classobj-a)
 command! -nargs=0 Format :call CocAction('format')
 
 " Add `:Fold` command to fold current buffer.
-command! -nargs=? Fold :call     CocAction('fold', <f-args>)
+command! -nargs=? Fold :call CocAction('fold', <f-args>)
 
 " Add `:OR` command for organize imports of the current buffer.
-command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organizeImport')
+command! -nargs=0 OR   :call CocAction('runCommand', 'editor.action.organizeImport')
+
+" Add (Neo)Vim's native statusline support.
+" NOTE: Please see `:h coc-status` for integrations with external plugins that
+" provide custom statusline: lightline.vim, vim-airline.
+" Still not implemented
+"function! StatusDiagnostic() abort
+"  let info = get(b:, 'coc_diagnostic_info', {})
+"  if empty(info) | return '' | endif
+"  let msgs = []
+"  if get(info, 'error', 0)
+"    call add(msgs, 'E' . info['error'])
+"  endif
+"  if get(info, 'warning', 0)
+"    call add(msgs, 'W' . info['warning'])
+"  endif
+"  return join(msgs, ' ') . '-' . 'Coc ✔'
+"endfunction
+"set statusline^=%{coc#status()}
 
 " Mappings using CoCList:
 " Show all diagnostics.

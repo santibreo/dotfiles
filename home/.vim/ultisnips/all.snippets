@@ -25,12 +25,13 @@
 # Online reference:
 # 	https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-global !p
-def complete(t, opts):
-	if t:
-		opts = [ m[len(t):] for m in opts if m.startswith(t) ]
-	if len(opts) == 1:
-		return opts[0]
-	return "(" + ' | '.join(opts) + ')'
-endglobal
-
+snippet "listfiles(.*)" "List the files into a given path" br
+`!p
+import os
+if match and os.path.isdir(match.group(1)):
+	snip.rv = "\n".join(os.listdir(match.group(1)))
+else:
+	snip.rv = "\n".join(os.listdir("."))
+`
+$0
+endsnippet

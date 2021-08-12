@@ -24,6 +24,7 @@
 #
 # Online reference:
 # 	https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
+
 snippet pdnp "import pandas and numpy" b
 import pandas as pd
 import numpy as np
@@ -39,7 +40,7 @@ snippet docbeg "Begin package documentation" b
 """
 $1
 
-@author: ${2:Prophet Jeremy}
+@author: ${2:n230104}
 """
 
 $0
@@ -66,18 +67,14 @@ snippet dclass "Document class citation" w
 :class:\`$1\`$0
 endsnippet
 
-snippet @pget "Property getter" bA
+snippet @pget "Class property getter" b
 @property
 def ${1:prop_name}(self):
-	"""
-	${2:prop_definition}
-	"""
 	return self._${1:prop_name}$0
 endsnippet
 
-snippet @pset "Property setter" bA
+snippet @pset "Class property setter" b
 @${1:prop_name}.setter
-def ${1:prop_name}(self, ${2:value}):
-	self._${1:prop_name} = ${2:value}$0
+def ${1:prop_name}(self, $2):
+	self._${1:prop_name} = $3$0
 endsnippet
-

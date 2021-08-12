@@ -24,62 +24,42 @@
 #
 # Online reference: https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet \bar "Short overline" wA
-\\bar{$1}$0
+snippet hlt "Highlighted text" wA
+<span style="background-color: #d8f59a">$1</span>$0
 endsnippet
 
-snippet // "Fraction" wA
-\\frac\{${1:num}\}\{${2:dem}\}$0
-endsnippet
+snippet ocb "Outline code block" bA
 
-snippet imb "Inline math block" wA
-\$$1\$$0
-endsnippet
-
-snippet omb "Outline math block" bA
-
-\$\$
-$1
-\$\$
-
-$0
-endsnippet
-
-snippet icb "Inline code block" wA
-\`$1\` $0
-endsnippet
-
-snippet ocb "Outline Code block" bA
-
-\`\`\`\{${1:r}\}
-$2
+\`\`\`\{$1, eval=FALSE, echo=TRUE\}
+	$2
 \`\`\`
 
 $0
 endsnippet
 
-snippet alertnote "Insert and info alert" bA
+
+snippet alert-info "Alert box with info" bA
 
 \`\`\`\{r, eval=TRUE, echo=FALSE\}
-message("$1")
+	message("$1")
 \`\`\`
 
 $0
 endsnippet
 
-snippet alertwarn "Insert and warning alert" bA
+snippet alert-warn "Alert box with warning" bA
 
 \`\`\`\{r, eval=TRUE, echo=FALSE\}
-warning("$1")
+	warning("$1")
 \`\`\`
 
 $0
 endsnippet
 
-snippet alerterror "Insert and error alert" bA
+snippet alert-stop "Alert box with error" bA
 
 \`\`\`\{r, eval=TRUE, echo=FALSE\}
-stop("$1")
+	stop("$1")
 \`\`\`
 
 $0

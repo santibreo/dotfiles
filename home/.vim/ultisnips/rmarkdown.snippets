@@ -25,23 +25,23 @@
 # Online reference:
 # 	https://github.com/SirVer/ultisnips/blob/master/doc/UltiSnips.txt
 
-snippet ocb "Code block" b
+snippet codeb "Code block" bA
 \`\`\`
 $1
 \`\`\`
 $0
 endsnippet
 
-snippet ocbl "Code block with language" bA
+snippet codel "Code block with language" bA
 \`\`\`\{${1:python}\}
 $2
 \`\`\`
 $0
 endsnippet
 
-snippet .icb "Inline code block" iA
+snippet .ilc "Inline code" iA
 \`$1\`$0
-endsnippet
+endsnippet	
 
 snippet .bf "Bold text" iA
 **$1**$0
@@ -49,7 +49,7 @@ endsnippet
 
 snippet .ita "Italic text" iA
 _$1_$0
-endsnippet
+endsnippet	
 
 priority 3
 snippet ".h([1-6]{1})" "Encabezado" brA
@@ -60,65 +60,4 @@ if match:
 else:
 	snip.rv = ""
 ` $0
-endsnippet
-
-snippet \bar "Short overline" wA
-\\bar{$1}$0
-endsnippet
-
-snippet // "Fraction" wA
-\\frac\{${1:num}\}\{${2:dem}\}$0
-endsnippet
-
-snippet imb "Inline math block" wA
-\$$1\$$0
-endsnippet
-
-snippet omb "Outline math block" bA
-
-\$\$
-$1
-\$\$
-
-$0
-endsnippet
-
-snippet icb "Inline code block" wA
-\`$1\` $0
-endsnippet
-
-snippet ocb "Outline Code block" bA
-
-\`\`\`\{${1:r}\}
-$2
-\`\`\`
-
-$0
-endsnippet
-
-snippet alertnote "Insert and info alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-message("$1")
-\`\`\`
-
-$0
-endsnippet
-
-snippet alertwarn "Insert and warning alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-warning("$1")
-\`\`\`
-
-$0
-endsnippet
-
-snippet alerterror "Insert and error alert" bA
-
-\`\`\`\{r, eval=TRUE, echo=FALSE\}
-stop("$1")
-\`\`\`
-
-$0
 endsnippet
