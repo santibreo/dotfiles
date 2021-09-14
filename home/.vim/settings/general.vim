@@ -26,7 +26,7 @@ set cmdheight=2                     " Avoid many cases of having to 'press <Ente
 set splitbelow                      " Split below instead of above
 set splitright                      " Vsplit right instead of left
 set foldenable                      " Enable folding
-set foldmethod=indent               "   - Based on indentation
+set foldmethod=marker               "   - Based on '{{{' and '}}}' markers
 set foldlevel=0                     "   - All folds closed up to 1 level
 set undodir=$VIMHOME/undodir        " Where to save the undo files
 set undofile                        " Enable undo after file is closed
@@ -110,6 +110,4 @@ hi ColorColumn guibg=#361e1c ctermbg=246
 
 " Disables automatic commenting on newline:
 autocmd FileType * setlocal formatoptions-=c formatoptions-=r formatoptions-=o
-
-
 autocmd BufRead, BufNewFile *.tex,*.cls set filetype=tex

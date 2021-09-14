@@ -8,7 +8,7 @@ setlocal foldexpr=vimtex#fold#level(v:lnum)
 setlocal foldtext=vimtex#fold#text()
 
 " Config of documentation filetypes
-source $NVIMHOME\after\ftplugin\gendocs.vim
+source $VIMHOME\after\ftplugin\gendocs.vim
 
 " Set main file of the project
 function! SetMainTexFile()

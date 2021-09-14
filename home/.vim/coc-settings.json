@@ -35,6 +35,7 @@
     // Code Snippets
     "snippets.ultisnips.usePythonx": true,
     "snippets.ultisnips.enable": true,
+    "snippets.userSnippetsDirectory": "$VIMHOME/ultisnips",
     "snippets.ultisnips.directories": [
         "ultisnips"
     ]

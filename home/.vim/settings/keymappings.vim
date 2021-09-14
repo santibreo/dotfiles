@@ -11,6 +11,10 @@ noremap ; :
 nmap <C-s> ;wa<CR>
 imap <C-s> <ESC>;wa<CR>a
 
+" Fold manually
+inoremap <leader>z[ <ESC>:put =split(&commentstring, '%s')[0]<CR>kddA<SPACE>{{{
+inoremap <leader>z] <ESC>:put =split(&commentstring, '%s')[0]<CR>kddA<SPACE>}}}
+
 " Goyo
 nmap <C-g> ;Goyo<CR>
 
