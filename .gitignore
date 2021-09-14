@@ -2,8 +2,10 @@ home/.vim/autoload/
 home/.vim/plugged/
 home/.vim/undodir/
 home/.vim/.netrwhist
-home/.ipython/profile_default/
+home/.ipython/profile_default/*
+home/.ipython/profile_default/*/
 !home/.ipython/profile_default/startup/
-home/.virtualenvs/
+home/.virtualenvs/*
+home/.virtualenvs/*/
 !home/.virtualenvs/*.txt
 
