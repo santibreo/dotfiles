@@ -17,7 +17,6 @@
 " +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
 " Package options
 
-
 " Use <C-space> for trigger snippet expand.
 imap <C-space> <Plug>(coc-snippets-expand)
 " Use <C-j> for both expand and jump (make expand higher priority.)

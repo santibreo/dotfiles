@@ -1,3 +1,4 @@
+" Default console commands TODO: Start Rush
 let g:repl_program = {
     \   'python': 'ipython',
     \   'default': 'zsh',

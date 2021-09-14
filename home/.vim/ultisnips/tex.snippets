@@ -102,27 +102,6 @@ $2
 \\end\{cases\}$0
 endsnippet
 
-snippet sympy "Sympy block " w
-sympyin $1 sympyout$0
-endsnippet
-
-# Sympy solve
-snippet "sympyin(.+)sympyout" "Evaluate sympy" wr
-`!p
-from sympy import *
-if match:
-	x, y, z, t = symbols('x y z t')
-	k, m, n = symbols('k m n', integer=True)
-	f, g, h = symbols('f g h', cls=Function)
-	sol = latex(eval(match.group(1).strip()))
-	snip.rv = sol.replace("{\\left(", "\\left(")\
-				 .replace("\\right)}", "\\right)")\
-				 .replace("\\,", "")
-else:
-	snip.rv = ""
-`$0
-endsnippet
-
 # Inline editions -------------------------------------------------------------
 snippet " "Text quotation" wA
 \`\`$1''$0

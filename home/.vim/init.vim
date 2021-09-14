@@ -14,7 +14,7 @@ function OSDependentPathJoiner(...)
 endfunction
 " Hosts
 if has('win32')
-    let g:node_host_prog = expand("$LOCALAPPDATA\\Programs\\node-v14.16.0-win-x64\\node_modules\\neovim\\bin\\cli.js")
+    let g:node_host_prog = expand("$APPDATA\\npm\\node_modules\\neovim\\bin")
     let g:python3_host_prog = expand("$LOCALAPPDATA\\Programs\\Python\\Python39\\python.exe")
     let g:python_scripts_location = expand("$LOCALAPPDATA\\Programs\\Python\\Python39\\Scripts")
 else
@@ -60,3 +60,4 @@ autocmd BufEnter * silent! lcd %:p:h
 autocmd BufWritePre * %s/\s\+$//e
 " Set Rmarkdown filetype correctly
 autocmd BufNewFile,BufRead *.Rmd,*.rmd,*.Rmarkdown,*.rmarkdown set filetype=rmd
+autocmd BufNewFile,BufRead *.sh,*.zsh,*.bash,*.shell set filetype=zsh
