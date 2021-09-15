@@ -12,8 +12,17 @@ nmap <C-s> ;wa<CR>
 imap <C-s> <ESC>;wa<CR>a
 
 " Fold manually
-inoremap <leader>z[ <ESC>:put =split(&commentstring, '%s')[0]<CR>kddA<SPACE>{{{
-inoremap <leader>z] <ESC>:put =split(&commentstring, '%s')[0]<CR>kddA<SPACE>}}}
+function InsertFoldMark(foldMark)
+    let commentChars=split(&commentstring, '%s')
+    let foldString=commentChars[0] . ' ' . a:foldMark
+    if len(commentChars) == 2
+        let foldString=foldString . ' ' . commentChars[1]
+    endif
+    return foldString
+endfunction
+
+inoremap <leader>z[ <ESC>:put =InsertFoldMark('{{{')<CR>kddf{ea
+inoremap <leader>z] <ESC>:put =InsertFoldMark('}}}')<CR>kdd
 
 " Goyo
 nmap <C-g> ;Goyo<CR>

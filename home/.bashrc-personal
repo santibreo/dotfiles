@@ -11,8 +11,8 @@ PS1="\[$(tput bold)\][\[$(tput sgr0)\]\[\033[38;5;196m\]\h\[$(tput sgr0)\]\[$(tp
 
 
 # Global variables
-export EDITOR='vim'
-export VIMHOME="$HOME/.vim"
+#export EDITOR='vim'
+#export VIMHOME="$HOME/.vim"
 export PATH="$HOME/.local/bin:$PATH"
 # Where to look for python
 export PYENV="/usr/"
@@ -22,7 +22,7 @@ alias ls='ls --color=auto'
 alias dmenu_run="dmenu_run -fn 'Inconsolata 9'"
 alias sdn='shutdown now'
 #alias sdn='sudo poweroff'       # (Artix) Shutdown now without problems
-alias gv='gvim'
+alias gv='nvim-qt'
 alias cls='clear'               # Too many Windows hours
 alias pubssh='cat ~/.ssh/id_rsa.pub | xclip -selection clipboard'
 alias pydeactivate="source $HOME/.bashrc && deactivate"
