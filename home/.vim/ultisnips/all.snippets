@@ -52,6 +52,8 @@ if match:
 	sol = latex(eval(match.group(1).strip()))
 	snip.rv = sol.replace("{\\left(", "\\left(")\
 				 .replace("\\right)}", "\\right)")\
+				 .replace("\{", "\\\\{")\
+				 .replace("\}", "\\\\}")\
 				 .replace("\\,", "")
 else:
 	snip.rv = ""
