@@ -42,6 +42,7 @@ set hlsearch                        " Highlight searches
 set ignorecase                      " Use case insensitive search
 set incsearch                       " Do incremental search
 set smartcase                       " Except when using capital letters
+set grepprg=rg\ --vimgrep\ --smart-case\ --follow   "Use ripgrep instead of grep
 " + SPACES vs TABS
 set tabstop=4                       " Tab size = 4
 set shiftwidth=4                    " Tab shift to work with << and >> commands
