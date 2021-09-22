@@ -27,6 +27,9 @@ inoremap <leader>z] <ESC>:put =InsertFoldMark('}}}')<CR>kdd
 " Goyo
 nmap <C-g> ;Goyo<CR>
 
+" FZF
+nnoremap <C-f> :Rg<CR>
+
 " Empty lines
 nmap <CR> ojkk
 nmap <S-CR> Ojkj
@@ -41,10 +44,21 @@ nnoremap <C-H> <C-W><C-H>
 nnoremap <leader>i :set cuc<CR>
 nnoremap <leader>ii :set nocuc<CR>
 
-" Use tabs instead of buffers
+" Navigate tabs
 nnoremap <leader>t  :tabnew<space>
 nnoremap <leader>sf <C-W>f
 nnoremap <leader>vf <C-W>vgf
+
+" Navigate buffers
+nnoremap <leader>n  :bn<CR>
+nnoremap <leader>p  :bp<cr>
+nnoremap <leader>d  :bd<cr>
+
+" Navigate quickfix list
+nnoremap [q :cprev<CR>
+nnoremap ]q :cnext<CR>
+nnoremap [Q :cfirst<CR>
+nnoremap ]Q :clast<CR>
 
 " Spell-check set to <leader>o, 'o' for 'orthography':
 imap <leader>ysp <ESC>;setlocal spell! spelllang=en<CR>
@@ -58,7 +72,7 @@ vnoremap p "_dp
 vnoremap P "_dP
 
 " Open NETRW with Q
-noremap Q :Sexplore<CR>
+noremap Q :Lexplore<CR>
 
 " Arrow to resize windows <Nop> to ban them
 noremap <Up> :resize -2<CR>
@@ -77,12 +91,6 @@ inoremap kj <Esc>
 " Easy TOGGLE
 nnoremap ~~ ~lh
 
-" ,+n next buffer instead next line
-nnoremap <leader>n  :bn<CR>
-" ,+p  previous buffer instead previous line
-nnoremap <leader>p  :bp<cr>
-" ,+d  previous buffer instead previous line
-nnoremap <leader>d  :bd<cr>
 
 " Better tabbing on visual
 vnoremap > >gv

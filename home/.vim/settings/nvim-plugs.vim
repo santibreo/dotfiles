@@ -30,10 +30,10 @@ call plug#begin("$VIMHOME/plugged")
     "Plug 'vim-pandoc/vim-pandoc-syntax'
     "Plug 'vim-pandoc/vim-rmarkdown'
     " Fuzzy file search
-    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     Plug 'junegunn/fzf.vim'
+    Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
     " Rip grep for faster searchs
-    Plug 'jremmen/vim-ripgrep'
+    " Plug 'jremmen/vim-ripgrep'
     " REPL
     Plug 'pappasam/nvim-repl'
 call plug#end()

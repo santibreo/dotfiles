@@ -31,6 +31,7 @@ source $VIMHOME/settings/keymappings.vim
 " netree
 let g:netrw_liststyle=3 " tree view type
 let g:netrw_banner=1 " 0 to don't show a (not so) useless banner
+let g:netrw_fastbrowse=0 " Close buffer after selecting file
 " emmet
 let g:user_emmet_leader_key='\' " Avoid conflicts with user
 let g:user_emmet_install_global = 0
